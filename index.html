@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tour Italiano Londra – Visite Guidate in Italiano</title>
+  <meta name="description" content="Scopri Londra con guide italiane esperte. Tour a piedi autentici, storie e segreti che le guide normali non raccontano." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .hero { position:relative; min-height:100vh; display:flex; align-items:center; overflow:hidden; }
+    .hero-bg { position:absolute; inset:0; background:url('https://static.wixstatic.com/media/697fb5_3acbee60c34340d884ae23bb0e88e5a3~mv2.jpg/v1/fill/w_1920,h_1080,al_c,q_85/697fb5_3acbee60c34340d884ae23bb0e88e5a3~mv2.jpg') center/cover no-repeat; }
+    .hero-overlay { position:absolute; inset:0; background:linear-gradient(135deg,rgba(28,26,20,.82) 0%,rgba(28,26,20,.5) 60%,rgba(28,26,20,.3) 100%); }
+    .hero-umb-deco { position:absolute; right:-60px; bottom:-40px; width:420px; opacity:.07; pointer-events:none; transform:rotate(-15deg); z-index:1; }
+    .hero-content { position:relative; z-index:2; padding:130px 48px 80px; max-width:800px; }
+    .hero-tag { display:inline-flex; align-items:center; gap:8px; background:var(--yellow); color:var(--dark); padding:6px 16px; border-radius:100px; font-size:12px; font-weight:600; margin-bottom:28px; }
+    .hero h1 { font-family:'Playfair Display',serif; font-size:clamp(48px,7vw,80px); font-weight:700; line-height:1.08; color:white; margin-bottom:24px; }
+    .hero h1 em { font-style:italic; color:var(--yellow); display:block; }
+    .hero-sub { font-size:18px; font-weight:300; line-height:1.75; color:rgba(255,255,255,.8); max-width:520px; margin-bottom:44px; }
+    .hero-actions { display:flex; gap:14px; flex-wrap:wrap; }
+
+    #tours { background:var(--white); padding:100px 48px; }
+    .tours-header { max-width:1200px; margin:0 auto 56px; }
+    .tours-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; max-width:1200px; margin:0 auto; }
+    .tour-card { aspect-ratio:3/4; }
+
+    #reviews { background:var(--dark); padding:100px 48px; }
+    .reviews-inner { max-width:1100px; margin:0 auto; }
+    .reviews-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:20px; margin:48px 0; }
+
+    #why { padding:100px 48px; }
+    .why-wrap { max-width:1100px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center; }
+    .why-img-wrap { position:relative; border-radius:24px; overflow:hidden; aspect-ratio:4/5; }
+    .why-img-wrap img { width:100%; height:100%; object-fit:cover; }
+    .why-img-badge { position:absolute; bottom:24px; left:24px; right:24px; background:var(--yellow); border-radius:16px; padding:18px 22px; display:flex; align-items:center; gap:14px; }
+    .why-img-badge-icon { font-size:32px; }
+    .why-img-badge-text { font-size:14px; font-weight:600; color:var(--dark); line-height:1.4; }
+    .why-img-badge-text span { display:block; font-size:12px; font-weight:400; opacity:.7; }
+    .why-points { display:flex; flex-direction:column; gap:16px; margin-top:36px; }
+
+    #gallery { background:var(--white); padding:100px 0; }
+    .gallery-header { padding:0 48px; max-width:1200px; margin:0 auto 48px; }
+    .gallery-strip { display:flex; gap:4px; }
+    .gallery-item { flex:1; min-width:160px; aspect-ratio:2/3; overflow:hidden; transition:flex .5s ease; }
+    .gallery-item:hover { flex:2.5; }
+    .gallery-item img { width:100%; height:100%; object-fit:cover; transition:transform .5s; }
+    .gallery-item:hover img { transform:scale(1.04); }
+
+    #book { background:var(--yellow); padding:100px 48px; text-align:center; position:relative; overflow:hidden; }
+    #book::before { content:''; position:absolute; right:-80px; top:-60px; width:360px; height:360px; background:url('umbrella.png') center/contain no-repeat; opacity:.12; transform:rotate(20deg); pointer-events:none; }
+    #book::after { content:''; position:absolute; left:-60px; bottom:-80px; width:280px; height:280px; background:url('umbrella.png') center/contain no-repeat; opacity:.08; transform:rotate(-10deg); pointer-events:none; }
+    .book-inner { position:relative; z-index:1; max-width:600px; margin:0 auto; }
+    #book h2 { font-family:'Playfair Display',serif; font-size:clamp(36px,5vw,56px); font-weight:700; color:var(--dark); margin-bottom:16px; line-height:1.15; }
+    #book h2 em { font-style:italic; }
+    #book p { font-size:17px; color:rgba(28,26,20,.7); line-height:1.7; margin-bottom:40px; }
+    .book-actions { display:flex; gap:14px; justify-content:center; flex-wrap:wrap; }
+
+    @media(max-width:960px) {
+      .tours-grid { grid-template-columns:1fr; }
+      .tour-card { aspect-ratio:4/3; }
+      .why-wrap { grid-template-columns:1fr; }
+      .why-img-wrap { display:none; }
+    }
+    @media(max-width:600px) {
+      .hero-content { padding:100px 24px 60px; }
+      .hero-umb-deco { display:none; }
+      .hero-actions { flex-direction:column; align-items:flex-start; }
+      #tours,#reviews,#why,#book { padding:72px 24px; }
+      #gallery { padding:72px 0; }
+      .gallery-header { padding:0 24px; }
+      .book-actions { flex-direction:column; align-items:center; }
+    }
+  </style>
+</head>
+<body>
+
+<nav id="navbar">
+  <a href="index.html" class="nav-logo">
+    <img src="umbrella.png" alt="Tour Italiano Londra" />
+    <span class="nav-logo-text">Tour Italiano Londra</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#tours">I Tour</a></li>
+    <li><a href="#reviews">Recensioni</a></li>
+    <li><a href="#why">Chi Siamo</a></li>
+    <li><a href="https://wa.me/447944838562" target="_blank" class="nav-cta">🌂 Prenota</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <img class="hero-umb-deco" src="umbrella.png" alt="" />
+  <div class="hero-content">
+    <div class="hero-tag"><img src="umbrella.png" style="height:20px;width:auto;" alt=""> Guide italiane a Londra</div>
+    <h1>Londra<br><em>come non l'hai mai vista</em></h1>
+    <p class="hero-sub">Tour a piedi in italiano, pieni di storie, risate e segreti che le guide normali non ti diranno mai.</p>
+    <div class="hero-actions">
+      <a href="#tours" class="btn-yellow">🗺️ Scegli il tuo tour</a>
+      <a href="https://wa.me/447944838562" target="_blank" class="btn-white-outline">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+        Scrivici su WhatsApp
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- PILL STRIP -->
+<div class="pill-strip">
+  <div class="pill-strip-inner">
+    <div class="pill-strip-item"><img src="umbrella.png" style="height:20px;width:auto;" alt=""> Guide madrelingua italiana</div>
+    <div class="pill-strip-dot"></div>
+    <div class="pill-strip-item">⭐ Free tour, paghi ciò che vuoi</div>
+    <div class="pill-strip-dot"></div>
+    <div class="pill-strip-item">🍺 Food tour con degustazioni incluse</div>
+    <div class="pill-strip-dot"></div>
+    <div class="pill-strip-item">📍 Westminster · Camden · Soho</div>
+    <div class="pill-strip-dot"></div>
+    <div class="pill-strip-item"><img src="umbrella.png" style="height:20px;width:auto;" alt=""> Guide madrelingua italiana</div>
+    <div class="pill-strip-dot"></div>
+    <div class="pill-strip-item">⭐ Free tour, paghi ciò che vuoi</div>
+    <div class="pill-strip-dot"></div>
+    <div class="pill-strip-item">🍺 Food tour con degustazioni incluse</div>
+    <div class="pill-strip-dot"></div>
+    <div class="pill-strip-item">📍 Westminster · Camden · Soho</div>
+    <div class="pill-strip-dot"></div>
+  </div>
+</div>
+
+<!-- TOURS -->
+<section id="tours">
+  <div class="tours-header">
+    <div class="tag-label">🗺️ I nostri tour</div>
+    <h2 class="sec-title">Scegli la tua<br><em>avventura londinese</em></h2>
+    <p class="sec-body">Tre esperienze uniche per scoprire Londra in italiano. Dalla storia di Westminster al cibo inglese che non ti aspetti, fino all'anima ribelle di Camden.</p>
+  </div>
+  <div class="tours-grid">
+    <a href="westminster.html" class="tour-card">
+      <div class="tour-card-img" style="background-image:url('https://static.wixstatic.com/media/c36e94_24d0801b5d894c0296fcd661af910e0d~mv2.jpg/v1/fill/w_800,h_1000,al_c,q_80/c36e94_24d0801b5d894c0296fcd661af910e0d~mv2.jpg')"></div>
+      <div class="tour-card-overlay"></div>
+      <div class="tour-card-badge">🌂 Free Tour</div>
+      <div class="tour-card-content">
+        <h3 class="tour-card-title">Il Centro<br>di Londra</h3>
+        <p class="tour-card-desc">Big Ben, Buckingham Palace, Westminster Abbey. Il cuore iconico di Londra, raccontato come non hai mai sentito.</p>
+        <div class="tour-card-meta">
+          <span class="tour-card-pill">📍 Trafalgar Square</span>
+          <span class="tour-card-pill">⏱ 2 ore</span>
+          <span class="tour-card-pill yellow">Offerta libera</span>
+        </div>
+      </div>
+    </a>
+    <a href="foodtour.html" class="tour-card">
+      <div class="tour-card-img" style="background-image:url('https://static.wixstatic.com/media/697fb5_fdd885367e0446beb5262ba3d331eb3d~mv2.jpg/v1/fill/w_800,h_1000,al_c,q_80/697fb5_fdd885367e0446beb5262ba3d331eb3d~mv2.jpg')"></div>
+      <div class="tour-card-overlay"></div>
+      <div class="tour-card-badge">🍺 Food Tour</div>
+      <div class="tour-card-content">
+        <h3 class="tour-card-title">Il Cibo Inglese<br>che Non Ti Aspetti</h3>
+        <p class="tour-card-desc">4 degustazioni tra Soho e Covent Garden. Ti farà ricredere sulla cucina inglese. Cibo incluso nel prezzo.</p>
+        <div class="tour-card-meta">
+          <span class="tour-card-pill">📍 Leicester Square</span>
+          <span class="tour-card-pill">⏱ 2 ore</span>
+          <span class="tour-card-pill yellow">£55 tutto incluso</span>
+        </div>
+      </div>
+    </a>
+    <a href="camden.html" class="tour-card">
+      <div class="tour-card-img" style="background-image:url('https://static.wixstatic.com/media/c36e94_e0b383abf11d48839dcc6bccf5259ceb~mv2.jpg/v1/fill/w_800,h_1000,al_c,q_80/c36e94_e0b383abf11d48839dcc6bccf5259ceb~mv2.jpg')"></div>
+      <div class="tour-card-overlay"></div>
+      <div class="tour-card-badge">🎸 Free Tour</div>
+      <div class="tour-card-content">
+        <h3 class="tour-card-title">La Mitica<br>Camden</h3>
+        <p class="tour-card-desc">Mercati colorati, street art, Amy Winehouse e l'anima più ribelle di Londra. Un quartiere unico al mondo.</p>
+        <div class="tour-card-meta">
+          <span class="tour-card-pill">📍 Camden Town</span>
+          <span class="tour-card-pill">⏱ 1h45</span>
+          <span class="tour-card-pill yellow">Offerta libera</span>
+        </div>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section id="reviews">
+  <div class="reviews-inner">
+    <div class="tag-label on-dark">⭐ Recensioni</div>
+    <h2 class="sec-title light">Quello che dicono<br><em>i nostri viaggiatori</em></h2>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="review-stars">⭐⭐⭐⭐⭐</div>
+        <p class="review-text">"Veronica è stata bravissima — ha reso ogni luogo vivo con storie e aneddoti. Un tour da non perdere assolutamente!"</p>
+        <p class="review-author">— Recensione Google ✓</p>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">⭐⭐⭐⭐⭐</div>
+        <p class="review-text">"Ottimo tour, guida preparatissima e simpatica. Ho scoperto angoli di Londra che non avrei mai trovato da sola."</p>
+        <p class="review-author">— Recensione Google ✓</p>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">⭐⭐⭐⭐⭐</div>
+        <p class="review-text">"Il food tour è stata una sorpresa! Non pensavo si mangiasse così bene a Londra. Degustazioni ottime e guida divertentissima."</p>
+        <p class="review-author">— Recensione Google ✓</p>
+      </div>
+    </div>
+    <div style="text-align:center">
+      <a href="https://maps.app.goo.gl/uPYDkaa2FeTv5YtN7" target="_blank" class="btn-yellow-outline">Leggi tutte le recensioni →</a>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section id="why">
+  <div class="why-wrap">
+    <div class="why-img-wrap">
+      <img src="https://static.wixstatic.com/media/697fb5_91b6481ba2c24c74a8940025c38b2372~mv2.jpg/v1/fill/w_600,h_750,al_c,q_80/697fb5_91b6481ba2c24c74a8940025c38b2372~mv2.jpg" alt="Tour Italiano Londra" loading="lazy" />
+      <div class="why-img-badge">
+        <div class="why-img-badge-icon"><img src="umbrella.png" style="height:36px;width:auto;" alt=""></div>
+        <div class="why-img-badge-text">Cerca l'ombrello giallo!<span>Il simbolo dei nostri tour</span></div>
+      </div>
+    </div>
+    <div>
+      <div class="tag-label">💛 Perché sceglierci</div>
+      <h2 class="sec-title">Non una guida.<br><em>Un'avventura.</em></h2>
+      <p class="sec-body">Londra è enorme e caotica. Con noi la scopri ridendo, in italiano, con storie che non dimenticherai.</p>
+      <div class="why-points">
+        <div class="why-point"><div class="why-point-icon">🇮🇹</div><div class="why-point-text"><h4>Guide madrelingua italiana</h4><p>Spieghiamo Londra nella tua lingua, con la profondità e il calore che solo un italiano sa dare.</p></div></div>
+        <div class="why-point"><div class="why-point-icon">🤫</div><div class="why-point-text"><h4>Storie che non trovi sulle guide</h4><p>Aneddoti, curiosità e segreti locali che rendono ogni luogo davvero indimenticabile.</p></div></div>
+        <div class="why-point"><div class="why-point-icon">💷</div><div class="why-point-text"><h4>Free tour: paghi quello che vuoi</h4><p>Westminster e Camden sono free tour. Paghi alla fine in base a quanto ti è piaciuto.</p></div></div>
+        <div class="why-point"><div class="why-point-icon">😌</div><div class="why-point-text"><h4>Ritmi rilassati, nessuno stress</h4><p>Percorsi accessibili e ritmi umani. Londra si gode, non si corre.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery">
+  <div class="gallery-header">
+    <div class="tag-label">📸 I nostri momenti</div>
+    <h2 class="sec-title">Scorci di <em>Londra con noi</em></h2>
+  </div>
+  <div class="gallery-strip">
+    <div class="gallery-item"><img src="https://static.wixstatic.com/media/c36e94_80570916996042b580ae81683cdbed74~mv2.jpg" alt="" loading="lazy"/></div>
+    <div class="gallery-item"><img src="https://static.wixstatic.com/media/11062b_199a9a8a018f4f81bd576165c7906eb0~mv2.jpg" alt="" loading="lazy"/></div>
+    <div class="gallery-item"><img src="https://static.wixstatic.com/media/11062b_d4100a96dba2463086131cc29b85be21~mv2.jpg" alt="" loading="lazy"/></div>
+    <div class="gallery-item"><img src="https://static.wixstatic.com/media/11062b_3dbdf8055b8f428bb357bb2f2cd02c1e~mv2.jpg" alt="" loading="lazy"/></div>
+    <div class="gallery-item"><img src="https://static.wixstatic.com/media/11062b_1186e2277476414bb921a59dab2b7bdd~mv2.jpg" alt="" loading="lazy"/></div>
+  </div>
+</section>
+
+<!-- BOOK CTA -->
+<section id="book">
+  <div class="book-inner">
+    <h2>Londra ti aspetta.<br><em>Noi anche.</em></h2>
+    <p>Scegli il tour, prenota il tuo posto e vieni a scoprire Londra come non l'hai mai vista. Hai domande? Scrivici su WhatsApp!</p>
+    <div class="book-actions">
+      <a href="#tours" class="btn-dark">🗺️ Vedi i tour</a>
+      <a href="https://wa.me/447944838562" target="_blank" class="btn-dark-outline">💬 Scrivici su WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="umbrella.png" alt="TIL" />
+      <p>Guide italiane esperte per scoprire Londra in modo autentico, divertente e indimenticabile.</p>
+    </div>
+    <div class="footer-col">
+      <h5>I Tour</h5>
+      <a href="westminster.html">🏛 Centro di Londra</a>
+      <a href="foodtour.html">🍺 Food Tour</a>
+      <a href="camden.html">🎸 Camden</a>
+    </div>
+    <div class="footer-col">
+      <h5>Info</h5>
+      <a href="#why">Chi Siamo</a>
+      <a href="https://maps.app.goo.gl/uPYDkaa2FeTv5YtN7" target="_blank">Recensioni</a>
+      <a href="mailto:ciao@touritalianolondra.com">Contattaci</a>
+    </div>
+    <div class="footer-col">
+      <h5>Seguici</h5>
+      <div class="footer-social">
+        <a href="https://www.instagram.com/touritalianolondra" target="_blank"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+        <a href="https://www.facebook.com/profile.php?id=61555395185051" target="_blank"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+        <a href="mailto:ciao@touritalianolondra.com"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Moolha Ltd · Company number 16386862</span>
+    <span>touritalianolondra.com</span>
+  </div>
+</footer>
+
+<a href="https://wa.me/447944838562" target="_blank" rel="noopener noreferrer" class="wa-float">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+</a>
+
+<div class="umbrella-float uf-1"><img src="umbrella.png" alt="" /></div>
+<div class="umbrella-float uf-2"><img src="umbrella.png" alt="" /></div>
+
+<script>
+var nav = document.getElementById('navbar');
+window.addEventListener('scroll', function() {
+  nav.classList.toggle('scrolled', window.scrollY > 60);
+  document.querySelectorAll('.umbrella-float').forEach(function(u) {
+    u.classList.toggle('show', window.scrollY > 300);
+  });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tour Westminster – Tour Italiano Londra</title>
+  <meta name="description" content="Scopri Westminster con una guida italiana esperta. Big Ben, Buckingham Palace, Westminster Abbey. Free tour a piedi." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .tour-hero { min-height:75vh; }
+    .tour-content { max-width:1100px; margin:0 auto; padding:80px 48px; display:grid; grid-template-columns:1fr 380px; gap:64px; align-items:start; }
+    .tour-body h3 { font-family:'Playfair Display',serif; font-size:28px; font-weight:700; margin-bottom:16px; color:var(--dark); }
+    .tour-body p { font-size:16px; line-height:1.85; color:var(--muted); margin-bottom:24px; }
+    .tour-sidebar { position:sticky; top:100px; }
+    .sidebar-card { background:white; border-radius:24px; padding:32px; box-shadow:0 8px 40px rgba(0,0,0,0.1); }
+    .sidebar-card h4 { font-family:'Playfair Display',serif; font-size:22px; margin-bottom:20px; color:var(--dark); }
+    .sidebar-info { display:flex; flex-direction:column; gap:14px; margin-bottom:28px; }
+    .sidebar-info-row { display:flex; align-items:center; gap:12px; font-size:14px; color:var(--text); }
+    .sidebar-info-row .icon { width:36px; height:36px; background:var(--yellow-pale); border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:16px; flex-shrink:0; }
+    .sidebar-price { background:var(--yellow); border-radius:16px; padding:20px; text-align:center; margin-bottom:20px; }
+    .sidebar-price .price-label { font-size:12px; font-weight:600; letter-spacing:.1em; text-transform:uppercase; color:var(--dark); opacity:.7; }
+    .sidebar-price .price-val { font-family:'Playfair Display',serif; font-size:36px; font-weight:700; color:var(--dark); }
+    .sidebar-price .price-note { font-size:12px; color:var(--dark); opacity:.6; margin-top:4px; }
+    .cal-embed { background:var(--cream); border-radius:16px; padding:32px; border:2px dashed var(--yellow); text-align:center; }
+    .cal-embed p { font-size:14px; color:var(--muted); line-height:1.7; }
+    .cal-embed strong { display:block; font-size:16px; color:var(--dark); margin-bottom:8px; }
+    .stops-section { background:var(--white); padding:72px 48px; }
+    .stops-inner { max-width:1100px; margin:0 auto; }
+    .stops-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(180px,1fr)); gap:16px; margin-top:32px; }
+    .stop-card { background:var(--cream); border-radius:16px; overflow:hidden; transition:transform .3s; }
+    .stop-card:hover { transform:translateY(-4px); }
+    .stop-card img { width:100%; aspect-ratio:1; object-fit:cover; }
+    .stop-card-name { padding:12px 16px; font-size:13px; font-weight:600; color:var(--dark); }
+    .meeting-section { background:var(--yellow-pale); padding:72px 48px; }
+    .meeting-inner { max-width:800px; margin:0 auto; text-align:center; }
+    .meeting-inner h3 { font-family:'Playfair Display',serif; font-size:32px; margin-bottom:16px; color:var(--dark); }
+    .meeting-inner p { font-size:16px; line-height:1.8; color:var(--muted); margin-bottom:24px; }
+    .meeting-inner .highlight { background:white; border-radius:16px; padding:24px; margin:24px 0; font-size:15px; line-height:1.8; color:var(--text); }
+    @media(max-width:900px){ .tour-content{grid-template-columns:1fr; padding:48px 24px;} .tour-sidebar{position:static;} .stops-section,.meeting-section{padding:56px 24px;} }
+  </style>
+</head>
+<body>
+<nav id="navbar">
+  <a href="index.html" class="nav-logo"><img src="umbrella.png" alt="TIL" /><span class="nav-logo-text">Tour Italiano Londra</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html#tours">I Tour</a></li>
+    <li><a href="index.html#reviews">Recensioni</a></li>
+    <li><a href="index.html#why">Chi Siamo</a></li>
+    <li><a href="https://wa.me/447944838562" target="_blank" class="nav-cta">🌂 Prenota</a></li>
+  </ul>
+</nav>
+
+<section class="tour-hero">
+  <div class="tour-hero-bg" style="background-image:url('https://static.wixstatic.com/media/c36e94_603529a44c18498297df69324714b17e~mv2.jpg/v1/fill/w_1920,h_1080,al_c,q_80/c36e94_603529a44c18498297df69324714b17e~mv2.jpg')"></div>
+  <div class="tour-hero-overlay"></div>
+  <div class="tour-hero-content">
+    <div class="tour-hero-badge">🌂 Free Tour</div>
+    <h1>Il Centro<br><em>di Londra</em></h1>
+    <p class="tour-hero-sub">Dal salotto di Londra fino al Big Ben: due ore tra i simboli più iconici della capitale, raccontati da una guida italiana che li ama davvero.</p>
+    <div class="tour-meta-pills">
+      <span class="tour-meta-pill">📍 Parte da Trafalgar Square</span>
+      <span class="tour-meta-pill">⏱ 2 ore</span>
+      <span class="tour-meta-pill">👥 Gruppo aperto</span>
+      <span class="tour-meta-pill yellow">💷 Offerta libera</span>
+    </div>
+    <a href="#prenota" class="btn-yellow">🗺️ Prenota ora</a>
+  </div>
+</section>
+
+<div class="tour-content">
+  <div class="tour-body">
+    <div class="tag-label">Il tour</div>
+    <h3>Vieni a scoprire una Londra che sembrerà di conoscere da sempre</h3>
+    <p>Le cerimonie davanti a Buckingham Palace, l'antica e misteriosa abbazia di Westminster, la magia del Big Ben... tutto questo e molto altro, presentato in maniera accessibile e coinvolgente da guide madrelingua italiana!</p>
+    <p>Il nostro tour parte dal salotto di Londra, Trafalgar Square, e ti accompagna per due ore attraverso i punti più imperdibili di questa incredibile capitale e le residenze della sua chiacchieratissima monarchia.</p>
+    <p>Il tour finisce davanti al Big Ben, facendoti sentire un po' più londinese e pronto per vivere al meglio la città!</p>
+
+    <div id="prenota" style="margin-top:48px">
+      <div class="tag-label">📅 Prenota il tuo posto</div>
+      <h3>Scegli data e orario</h3>
+      <div class="cal-embed">
+        <strong>🗓️ Sistema di prenotazione in arrivo!</strong>
+        <p>Stiamo configurando Cal.com per permetterti di scegliere data e orario direttamente qui.<br>Nel frattempo, scrivici su WhatsApp e ti confermiamo il posto in 5 minuti!</p>
+        <a href="https://wa.me/447944838562?text=Ciao!%20Vorrei%20prenotare%20il%20tour%20di%20Westminster." target="_blank" class="btn-yellow" style="margin-top:20px; display:inline-flex;">💬 Prenota via WhatsApp</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="tour-sidebar">
+    <div class="sidebar-card">
+      <h4>Dettagli del tour</h4>
+      <div class="sidebar-info">
+        <div class="sidebar-info-row"><span class="icon">⏱</span><span><strong>Durata:</strong> 2 ore</span></div>
+        <div class="sidebar-info-row"><span class="icon">📍</span><span><strong>Partenza:</strong> Trafalgar Square (davanti a Waterstones)</span></div>
+        <div class="sidebar-info-row"><span class="icon">🏁</span><span><strong>Arrivo:</strong> Big Ben</span></div>
+        <div class="sidebar-info-row"><span class="icon">👥</span><span><strong>Gruppo:</strong> Aperto, max 15 persone</span></div>
+        <div class="sidebar-info-row"><span class="icon">♿</span><span><strong>Accessibilità:</strong> 100% piano, completamente accessibile</span></div>
+        <div class="sidebar-info-row"><span class="icon">🌂</span><span><strong>Come trovarci:</strong> Cerca la guida con l'ombrello giallo!</span></div>
+      </div>
+      <div class="sidebar-price">
+        <div class="price-label">Costo</div>
+        <div class="price-val">Offerta libera</div>
+        <div class="price-note">Paghi alla fine quanto pensi valga · suggerito £15 adulti, £5 bambini</div>
+      </div>
+      <a href="https://wa.me/447944838562?text=Ciao!%20Vorrei%20prenotare%20il%20tour%20di%20Westminster." target="_blank" class="btn-yellow" style="width:100%;justify-content:center;">💬 Prenota su WhatsApp</a>
+    </div>
+  </div>
+</div>
+
+<section class="stops-section">
+  <div class="stops-inner">
+    <div class="tag-label">🗺️ Il percorso</div>
+    <h2 class="sec-title">Le tappe <em>del tour</em></h2>
+    <div class="stops-grid">
+      <div class="stop-card"><img src="https://static.wixstatic.com/media/c36e94_9a487ea32c1e4d9cb0dec667d9cae864~mv2.jpg" alt="Trafalgar Square" loading="lazy"/><div class="stop-card-name">🟡 Trafalgar Square (partenza)</div></div>
+      <div class="stop-card"><img src="https://static.wixstatic.com/media/c36e94_f142ab6ff17b42cfa9a420c26d2a099c~mv2.jpg" alt="Admiralty Arch" loading="lazy"/><div class="stop-card-name">Admiralty Arch</div></div>
+      <div class="stop-card"><img src="https://static.wixstatic.com/media/c36e94_857baec156d64d9ca23837b5c61154c3~mv2.webp" alt="Pall Mall" loading="lazy"/><div class="stop-card-name">Pall Mall</div></div>
+      <div class="stop-card"><img src="https://static.wixstatic.com/media/c36e94_de4528e71f2b4fa0ad63c147fd4580e2~mv2.jpg" alt="St James Palace" loading="lazy"/><div class="stop-card-name">St James's Palace</div></div>
+      <div class="stop-card"><img src="https://static.wixstatic.com/media/c36e94_a9e8b461b1524c33b08ab35335738c46~mv2.jpg" alt="The Mall" loading="lazy"/><div class="stop-card-name">The Mall</div></div>
+      <div class="stop-card"><img src="https://static.wixstatic.com/media/c36e94_9972ab9287034cec8a0ffcd406b8af42~mv2.jpg" alt="Clarence House" loading="lazy"/><div class="stop-card-name">Clarence House</div></div>
+      <div class="stop-card"><img src="https://static.wixstatic.com/media/c36e94_f89deff5df684f97a965f21a69b421fc~mv2.jpg" alt="Buckingham Palace" loading="lazy"/><div class="stop-card-name">Buckingham Palace</div></div>
+      <div class="stop-card"><img src="https://static.wixstatic.com/media/c36e94_a212c342d8fe465995cd627ef15bf896~mv2.webp" alt="St James Park" loading="lazy"/><div class="stop-card-name">St James's Park</div></div>
+      <div class="stop-card"><img src="https://static.wixstatic.com/media/c36e94_24d0801b5d894c0296fcd661af910e0d~mv2.jpg" alt="Westminster Abbey" loading="lazy"/><div class="stop-card-name">Westminster Abbey</div></div>
+      <div class="stop-card"><img src="https://static.wixstatic.com/media/c36e94_603529a44c18498297df69324714b17e~mv2.jpg" alt="Big Ben" loading="lazy"/><div class="stop-card-name">🏁 Big Ben (arrivo)</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="meeting-section">
+  <div class="meeting-inner">
+    <img src="umbrella.png" style="height:60px;margin-bottom:16px;" alt="">
+    <h3>Punto di incontro</h3>
+    <div class="highlight">
+      Ci troviamo <strong>10 minuti prima dell'inizio</strong> davanti alla libreria <a href="https://www.google.com/maps/place/Waterstones/@51.5076116,-0.1293683,17z" target="_blank" style="color:var(--yellow-deep);font-weight:600;">Waterstones di Trafalgar Square</a> (di fronte ai portici).<br><br>
+      Presentatevi alla guida con l'<strong>ombrello giallo</strong> 🌂 che registrerà la vostra presenza. Quando il gruppo sarà completo, si parte!<br><br>
+      Il tour dura 2 ore e finisce davanti al Big Ben. La guida accetterà pagamenti in sterline (GBP) o carta.
+    </div>
+    <a href="https://wa.me/447944838562?text=Ciao!%20Vorrei%20prenotare%20il%20tour%20di%20Westminster." target="_blank" class="btn-yellow">💬 Prenota su WhatsApp</a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand"><img src="umbrella.png" alt="TIL" /><p>Guide italiane esperte per scoprire Londra in modo autentico, divertente e indimenticabile.</p></div>
+    <div class="footer-col"><h5>I Tour</h5><a href="westminster.html">🏛 Centro di Londra</a><a href="foodtour.html">🍺 Food Tour</a><a href="camden.html">🎸 Camden</a></div>
+    <div class="footer-col"><h5>Info</h5><a href="index.html#why">Chi Siamo</a><a href="https://maps.app.goo.gl/uPYDkaa2FeTv5YtN7" target="_blank">Recensioni</a><a href="mailto:ciao@touritalianolondra.com">Contattaci</a></div>
+    <div class="footer-col"><h5>Contatti</h5><a href="https://wa.me/447944838562" target="_blank">💬 WhatsApp</a><a href="mailto:ciao@touritalianolondra.com">✉️ Email</a></div>
+  </div>
+  <div class="footer-bottom"><span>© 2025 Moolha Ltd · Company number 16386862</span><span>touritalianolondra.com</span></div>
+</footer>
+
+<a href="https://wa.me/447944838562" target="_blank" class="wa-float"><svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg></a>
+<div class="umbrella-float uf-1"><img src="umbrella.png" alt=""/></div>
+<div class="umbrella-float uf-2"><img src="umbrella.png" alt=""/></div>
+<script>
+var nav=document.getElementById('navbar');
+window.addEventListener('scroll',function(){
+  nav.classList.toggle('scrolled',window.scrollY>60);
+  document.querySelectorAll('.umbrella-float').forEach(function(u){u.classList.toggle('show',window.scrollY>300);});
+});
+</script>
+</body></html>
