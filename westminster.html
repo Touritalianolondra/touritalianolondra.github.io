@@ -4,8 +4,8 @@
   <meta charset="UTF-8" />
   <link rel="icon" type="image/x-icon" href="favicon.ico" />
   <link rel="apple-touch-icon" href="apple-touch-icon.png" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tour Westminster – Tour Italiano Londra</title>
-  <meta name="description" content="Scopri Westminster con una guida italiana esperta. Big Ben, Buckingham Palace, Westminster Abbey. Free tour a piedi." />
+  <title>Westminster di Sera – Tour Italiano Londra</title>
+  <meta name="description" content="Westminster di sera: Big Ben, Buckingham Palace, Westminster Abbey nella luce dorata della sera. Ogni sabato alle 18:00, estate 2026." />
   <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400;1,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
@@ -45,6 +45,7 @@
 <body>
 <nav id="navbar">
   <a href="index.html" class="nav-logo"><img src="umbrella.png" alt="TIL" /><span class="nav-logo-text">Tour Italiano Londra</span></a>
+  <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
   <ul class="nav-links">
     <li><a href="index.html#tours">I Tour</a></li>
     <li><a href="index.html#reviews">Recensioni</a></li>
@@ -56,14 +57,16 @@
 <section class="tour-hero">
   <div class="tour-hero-bg" style="background-image:url('https://static.wixstatic.com/media/c36e94_603529a44c18498297df69324714b17e~mv2.jpg/v1/fill/w_1920,h_1080,al_c,q_80/c36e94_603529a44c18498297df69324714b17e~mv2.jpg')"></div>
   <div class="tour-hero-overlay"></div>
+  <span class="deco-sticker deco-moon">🌙</span>
+  <span class="deco-sticker deco-umbrella">⛱️</span>
   <div class="tour-hero-content">
-    <div class="tour-hero-badge">🌂 Free Tour</div>
-    <h1>Il Centro<br><em>di Londra</em></h1>
-    <p class="tour-hero-sub">Dal salotto di Londra fino al Big Ben: due ore tra i simboli più iconici della capitale, raccontati da una guida italiana che li ama davvero.</p>
+    <div class="tour-hero-badge">🌙 Tour Serale · Estate 2026</div>
+    <h1>Westminster<br><em>di Sera</em></h1>
+    <p class="tour-hero-sub">Di giorno fa troppo caldo per girare Londra. Vieni a scoprire Westminster nella luce dorata della sera: Big Ben, Buckingham Palace e Westminster Abbey, senza il caldo e con meno folla.</p>
     <div class="tour-meta-pills">
       <span class="tour-meta-pill">📍 Parte da Trafalgar Square</span>
-      <span class="tour-meta-pill">⏱ 2 ore</span>
-      <span class="tour-meta-pill">👥 Gruppo aperto</span>
+      <span class="tour-meta-pill">🕕 Ogni sabato, 18:00</span>
+      <span class="tour-meta-pill">📅 18/25 luglio + tutti i sabati di agosto</span>
       <span class="tour-meta-pill yellow">💷 Offerta libera</span>
     </div>
     <a href="#prenota" class="btn-yellow">🗺️ Prenota ora</a>
@@ -73,10 +76,10 @@
 <div class="tour-content">
   <div class="tour-body">
     <div class="tag-label">Il tour</div>
-    <h3>Vieni a scoprire una Londra che sembrerà di conoscere da sempre</h3>
-    <p>Le cerimonie davanti a Buckingham Palace, l'antica e misteriosa abbazia di Westminster, la magia del Big Ben... tutto questo e molto altro, presentato in maniera accessibile e coinvolgente da guide madrelingua italiana!</p>
-    <p>Il nostro tour parte dal salotto di Londra, Trafalgar Square, e ti accompagna per due ore attraverso i punti più imperdibili di questa incredibile capitale e le residenze della sua chiacchieratissima monarchia.</p>
-    <p>Il tour finisce davanti al Big Ben, facendoti sentire un po' più londinese e pronto per vivere al meglio la città!</p>
+    <h3>Westminster non è mai stata così bella come al tramonto</h3>
+    <p>D'estate, con il caldo e la folla del giorno, esplorare Londra può essere faticoso. Per questo abbiamo creato una versione serale del nostro tour più amato: le cerimonie davanti a Buckingham Palace, l'antica e misteriosa abbazia di Westminster, la magia del Big Ben, il tutto nella luce morbida della sera.</p>
+    <p>Il tour parte dal salotto di Londra, Trafalgar Square, ogni <strong>sabato alle 18:00</strong> — disponibile il 18 e 25 luglio, e tutti i sabati di agosto 2026. Due ore attraverso i punti più imperdibili della capitale e le residenze della sua chiacchieratissima monarchia.</p>
+    <p>Il tour finisce davanti al Big Ben, con la luce della sera e Londra che si accende. Un'edizione limitata, solo per questa estate.</p>
 
     <div id="prenota" style="margin-top:48px">
       <div class="tag-label">📅 Prenota il tuo posto</div>
@@ -84,7 +87,7 @@
       <div class="cal-embed">
         <strong>🗓️ Sistema di prenotazione in arrivo!</strong>
         <p>Stiamo configurando Cal.com per permetterti di scegliere data e orario direttamente qui.<br>Nel frattempo, scrivici su WhatsApp e ti confermiamo il posto in 5 minuti!</p>
-        <a href="https://wa.me/447944838562?text=Ciao!%20Vorrei%20prenotare%20il%20tour%20di%20Westminster." target="_blank" class="btn-yellow" style="margin-top:20px; display:inline-flex;">💬 Prenota via WhatsApp</a>
+        <a href="https://wa.me/447944838562?text=Ciao!%20Vorrei%20prenotare%20il%20tour%20serale%20di%20Westminster." target="_blank" class="btn-yellow" style="margin-top:20px; display:inline-flex;">💬 Prenota via WhatsApp</a>
       </div>
     </div>
   </div>
@@ -93,6 +96,8 @@
     <div class="sidebar-card">
       <h4>Dettagli del tour</h4>
       <div class="sidebar-info">
+        <div class="sidebar-info-row"><span class="icon">🕕</span><span><strong>Orario:</strong> Ogni sabato, 18:00</span></div>
+        <div class="sidebar-info-row"><span class="icon">📅</span><span><strong>Date:</strong> 18/25 luglio + tutti i sabati di agosto 2026</span></div>
         <div class="sidebar-info-row"><span class="icon">⏱</span><span><strong>Durata:</strong> 2 ore</span></div>
         <div class="sidebar-info-row"><span class="icon">📍</span><span><strong>Partenza:</strong> Trafalgar Square (davanti a Waterstones)</span></div>
         <div class="sidebar-info-row"><span class="icon">🏁</span><span><strong>Arrivo:</strong> Big Ben</span></div>
@@ -105,7 +110,7 @@
         <div class="price-val">Offerta libera</div>
         <div class="price-note">Paghi alla fine quanto pensi valga · suggerito £15 adulti, £5 bambini</div>
       </div>
-      <a href="https://wa.me/447944838562?text=Ciao!%20Vorrei%20prenotare%20il%20tour%20di%20Westminster." target="_blank" class="btn-yellow" style="width:100%;justify-content:center;">💬 Prenota su WhatsApp</a>
+      <a href="https://wa.me/447944838562?text=Ciao!%20Vorrei%20prenotare%20il%20tour%20serale%20di%20Westminster." target="_blank" class="btn-yellow" style="width:100%;justify-content:center;">💬 Prenota su WhatsApp</a>
     </div>
   </div>
 </div>
@@ -138,7 +143,7 @@
       Presentatevi alla guida con l'<strong>ombrello giallo</strong> 🌂 che registrerà la vostra presenza. Quando il gruppo sarà completo, si parte!<br><br>
       Il tour dura 2 ore e finisce davanti al Big Ben. La guida accetterà pagamenti in sterline (GBP) o carta.
     </div>
-    <a href="https://wa.me/447944838562?text=Ciao!%20Vorrei%20prenotare%20il%20tour%20di%20Westminster." target="_blank" class="btn-yellow">💬 Prenota su WhatsApp</a>
+    <a href="https://wa.me/447944838562?text=Ciao!%20Vorrei%20prenotare%20il%20tour%20serale%20di%20Westminster." target="_blank" class="btn-yellow">💬 Prenota su WhatsApp</a>
   </div>
 </section>
 
@@ -161,5 +166,20 @@ window.addEventListener('scroll',function(){
   nav.classList.toggle('scrolled',window.scrollY>60);
   document.querySelectorAll('.umbrella-float').forEach(function(u){u.classList.toggle('show',window.scrollY>300);});
 });
+
+var navToggle = document.getElementById('navToggle');
+var navLinksEl = document.querySelector('.nav-links');
+if (navToggle && navLinksEl) {
+  navToggle.addEventListener('click', function() {
+    navLinksEl.classList.toggle('open');
+    navToggle.classList.toggle('active');
+  });
+  navLinksEl.querySelectorAll('a').forEach(function(a) {
+    a.addEventListener('click', function() {
+      navLinksEl.classList.remove('open');
+      navToggle.classList.remove('active');
+    });
+  });
+}
 </script>
 </body></html>
